@@ -6,7 +6,7 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-namespace yunwuxin;
+namespace tensent\auth;
 
 use InvalidArgumentException;
 use think\helper\Arr;
