@@ -6,6 +6,7 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
+
 use tensent\auth\facade\Gate;
 
 /**
@@ -15,5 +16,5 @@ use tensent\auth\facade\Gate;
  * @return bool
  */
 function can($user, $ability, ...$args){
-    return Gate::forUser($user)->can($ability, ...$args);
+	return Gate::forUser($user)->can($ability, ...$args);
 }

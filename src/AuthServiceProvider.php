@@ -10,6 +10,6 @@
 namespace tensent\auth;
 
 class AuthServiceProvider extends \think\Service{
-    public function boot(){
-    }
+	public function boot(){
+	}
 }

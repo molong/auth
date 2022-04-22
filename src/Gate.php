@@ -13,7 +13,7 @@ use ReflectionClass;
 use think\App;
 use think\Config;
 use think\helper\Str;
-use tensent\auth;
+use tensent\auth\Auth;
 use tensent\auth\traits\AuthorizableUser as User;
 
 class Gate{
@@ -280,5 +280,4 @@ class Gate{
 			return $auth->guard()->user();
 		}, $policies, $policyNamespace);
 	}
-
 }

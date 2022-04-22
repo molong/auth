@@ -12,5 +12,5 @@ namespace tensent\auth;
 use tensent\auth\traits\PoliciesCollection;
 
 class Collection extends \think\model\Collection{
-    use PoliciesCollection;
+	use PoliciesCollection;
 }

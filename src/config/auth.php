@@ -12,36 +12,29 @@
 use tensent\auth\model\User;
 
 return [
-    'default'          => 'web',
-    'guards'           => [
-        'web' => [
-            'type'     => 'session',
-            'provider' => 'user',
-        ],
-        'api' => [
-            'type'     => 'token',
-            'provider' => 'user',
-        ],
-    ],
-    'providers'        => [
-        'user' => [
-            'type'  => 'model',
-            'model' => User::class,
-        ],
-    ],
-    'password'         => [
-        'provider' => 'user',
-    ],
-    //设为false,则不注册路由
-    'route'            => [
-        'group'       => 'auth',
-        'controllers' => [
-            'login'    => LoginController::class,
-            'register' => RegisterController::class,
-            'forgot'   => ForgotPasswordController::class,
-            'reset'    => ResetPasswordController::class,
-        ],
-    ],
-    'policy_namespace' => '\\app\\policy\\',
-    'policies'         => [],
+	'default'          => 'web',
+	'guards'           => [
+		'web' => [
+			'type'     => 'session',
+			'provider' => 'user',
+		],
+		'api' => [
+			'type'     => 'token',
+			'provider' => 'user',
+		],
+	],
+	'providers'        => [
+		'user' => [
+			'type'  => 'model',
+			'model' => User::class,
+		],
+	],
+	'password'         => [
+		'provider' => 'user',
+	],
+
+	"fields" => [],
+
+	'policy_namespace' => '\\app\\policy\\',
+	'policies'         => [],
 ];
