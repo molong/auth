@@ -1,0 +1,35 @@
+{
+    "name": "tensent/think-auth",
+    "description": "thinkphp auth",
+    "type": "think-extend",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "molong",
+            "email": "ycgpp@126.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3.0",
+        "topthink/think": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tensent\\auth\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "tensent\\auth\\AuthServiceProvider"
+            ],
+            "config": {
+                "auth": "src/config/auth.php"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
