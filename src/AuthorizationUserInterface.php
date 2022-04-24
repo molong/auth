@@ -6,21 +6,20 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-namespace tensent\auth\credentials;
+namespace tensent\auth;
 
-class PasswordCredential extends BaseCredentials{
-	public function __construct($username, $password){
-		parent::__construct([
-			'username' => $username,
-			'password' => $password,
-		]);
-	}
+interface AuthorizationUserInterface{
+	public function getUserById($id): AuthorizationUserInterface;
 
-	public function getUsername(){
-		return $this->offsetGet('username');
-	}
+	public function hasUserByUserName($username): bool;
 
-	public function getPassword(){
-		return $this->offsetGet('password');
-	}
+	public function getUserByUserName($username): AuthorizationUserInterface;
+
+	public function verifyPassword($password): bool;
+
+	public function setUserName($username): AuthorizationUserInterface;
+
+	public function setPassword($password): AuthorizationUserInterface;
+
+	public function token(): string;
 }

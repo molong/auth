@@ -6,16 +6,19 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-namespace tensent\auth\traits;
+namespace tensent\auth\drive;
 
-trait PoliciesCollection{
+use tensent\auth\drive\DriveInterface;
 
-	public function withPolicies($abilities){
-		$this->each(function ($model) use ($abilities) {
-			/** @var PoliciesModel $model */
-			$model && $model->withPolicies($abilities);
-		});
+class Cookie implements DriveInterface{
+	public function has($key){
+		return \think\facade\Cookie::has($key);
+	}
 
-		return $this;
+	public function get($key){
+		return \think\facade\Cookie::get($key);
+	}
+
+	public function delete($key){
 	}
 }

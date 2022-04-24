@@ -6,13 +6,17 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-namespace tensent\auth\interfaces;
+namespace tensent\auth\drive;
 
-interface Provider{
-	/**
-	 * 根据用户输入的数据获取用户
-	 * @param mixed $credentials
-	 * @return mixed
-	 */
-	public function retrieveByCredentials($credentials);
+class Session implements DriveInterface{
+	public function has($key){
+		return \think\facade\Session::has($key);
+	}
+
+	public function get($key){
+		return \think\facade\Session::get($key);
+	}
+
+	public function delete($key){
+	}
 }

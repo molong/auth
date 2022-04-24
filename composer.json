@@ -16,10 +16,7 @@
     "autoload": {
         "psr-4": {
             "tensent\\auth\\": "src/"
-        },
-        "files": [
-            "src/helper.php"
-        ]
+        }
     },
     "extra": {
         "think": {
@@ -27,7 +24,7 @@
                 "tensent\\auth\\AuthServiceProvider"
             ],
             "config": {
-                "auth": "src/config/auth.php"
+                "auth": "config/auth.php"
             }
         }
     }

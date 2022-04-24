@@ -6,16 +6,12 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-namespace tensent\auth\password;
+namespace tensent\auth\drive;
 
-class Exception extends \InvalidArgumentException{
-	const INVALID_USER = 'passwords.user';
+interface DriveInterface{
+	public function get($key);
 
-	const INVALID_PASSWORD = 'passwords.password';
-
-	const INVALID_TOKEN = 'passwords.token';
-
-	public function __construct($message){
-		parent::__construct($message);
-	}
+	public function has($key);
+	
+	public function delete($key);
 }

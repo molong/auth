@@ -6,10 +6,22 @@
 // +----------------------------------------------------------------------
 // | Author: molong <molong@tensent.cn> <http://www.tensent.cn>
 // +----------------------------------------------------------------------
-
 namespace tensent\auth;
 
-class AuthServiceProvider extends \think\Service{
-	public function boot(){
+use think\Service;
+
+class AuthService extends Service{
+
+	/**
+	 * @title 注册服务
+	 *
+	 * @return void
+	 */
+	public function register(){
+		$this->app->bind('auth', function ($store = null) {
+			$auth = new Auth(config('auth'));
+
+			return $auth;
+		});
 	}
 }
